@@ -1,9 +1,10 @@
-import './App.css';
+import "./App.css";
+import SideNav from "./components/SideNav";
 
 function App() {
   return (
-    <div className="">
-  
+    <div>
+      <SideNav />
     </div>
   );
 }
