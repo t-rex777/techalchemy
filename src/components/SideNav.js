@@ -3,18 +3,17 @@ import logo from "../images/icons/logo.svg";
 import {
   AiOutlineHome,
   AiOutlineMail,
-  AiOutlineClockCircle,
 } from "react-icons/ai";
 import { BiHelpCircle } from "react-icons/bi";
-import { FiSettings } from "react-icons/fi";
+import { FiSettings , FiClock} from "react-icons/fi";
 import { VscNote } from "react-icons/vsc";
 import { ImCross, ImArrowRight2 } from "react-icons/im";
 import { IoIosArrowUp, IoIosArrowDown } from "react-icons/io";
 
 function SideNav() {
   return (
-    <nav className="p-4 w-60 flex flex-col justify-evenly bg-gray-200 min-h-screen">
-      <div className="flex px-4 items-center space-x-3 text-md">
+    <nav className="p-4 w-60 flex flex-col justify-between bg-gray-100 min-h-screen">
+      <div className="flex px-4 items-center space-x-3 text-md self-start ">
         <img src={logo} alt="logo" />
         <p className="font-bold">Pomo & co</p>
       </div>
@@ -39,7 +38,7 @@ function SideNav() {
 
       <div className="relative flex flex-col items-center py-5 pb-3 -pt-3 space-y-5  bg-white rounded-3xl">
         <ImCross size={10} className="absolute top-5 right-5 " />
-        <AiOutlineClockCircle
+        <FiClock
           color="red"
           className="bg-red-100 mt-10 mb-5"
           size={30}

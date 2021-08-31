@@ -10,5 +10,4 @@
   .sidenav__item__active {
     @apply flex items-center space-x-3 px-4 py-2 text-white bg-purple-800 rounded-lg text-sm my-1 cursor-pointer;
   }
-  
 }
