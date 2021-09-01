@@ -3,8 +3,13 @@ import carrows from "../images/icons/carrows.svg";
 import mcd from "../images/icons/mcd.svg";
 import pizzahut from "../images/icons/pizzahut.svg";
 import burgerking from "../images/icons/burgerking.svg";
+import { useRestaurant } from "./../restaurant-context/RestaurandProvider";
 
-function Category({ category, handleCategory }) {
+function Category() {
+  const { state, dispatch } = useRestaurant();
+  const { category } = state;
+  const handleCategory = (e) =>
+    dispatch({ type: "SET_CATEGORY", payload: e.target.id });
   return (
     <div>
       <h1 className="font-bold text-xl">Category</h1>

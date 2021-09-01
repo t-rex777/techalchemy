@@ -1,30 +1,10 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
+import { useRestaurant } from "./../restaurant-context/RestaurandProvider";
 
-function Restaurant({ category }) {
-  const [restaurants, setRestaurants] = useState([]);
-  const [restaurantList, setRestaurantList] = useState([]);
-  useEffect(() => {
-    (async () => {
-      const response = await axios.get(
-        "https://api.sheety.co/bdcbafbc1f4197dda178b9e69f6ccee9/techAlchemyWebTest1/allRestaurants"
-      );
-      setRestaurants(response.data.allRestaurants);
-      setRestaurantList(response.data.allRestaurants);
-    })();
-  }, []);
-
-  useEffect(() => {
-    if (category.length === 0) {
-      return setRestaurantList(restaurants);
-    }
-    const filteredList = restaurants.filter(({ restaurantCategory }) => {
-      return category.some((cate) => restaurantCategory.includes(cate));
-    });
-    setRestaurantList(filteredList);
-  }, [category]);
-
+function Restaurant() {
+  const { state } = useRestaurant();
+  const { restaurantList } = state;
   return (
     <div className="flex justify-center lg:justify-start flex-wrap">
       {restaurantList?.map(
