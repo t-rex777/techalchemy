@@ -10,12 +10,14 @@ import { BsFilter } from "react-icons/bs";
 import { BiSearchAlt2 } from "react-icons/bi";
 import { useHistory } from "react-router-dom";
 import { useRestaurant } from "./../restaurant-context/RestaurandProvider";
+import Filter from "./Filter";
 
 function TopNav({ rpage }) {
   const history = useHistory();
   const [search, setSearch] = useState("");
   const { state, dispatch } = useRestaurant();
   const { restaurants } = state;
+  const [togglefilter, setToggleFilter] = useState(false);
   const searchRestaurants = (e) => {
     const searchedValue = e.target.value;
     setSearch(searchedValue);
@@ -65,16 +67,18 @@ function TopNav({ rpage }) {
             <BsFilter
               size={30}
               color="white"
-              className="bg-purple-800 p-1 rounded-lg"
+              className="bg-purple-800 p-1 rounded-lg cursor-pointer"
+              onClick={() => setToggleFilter(true)}
             />
           )}
           <IoMdCart
             size={30}
             color="white"
-            className="bg-yellow-600 p-1 rounded-lg"
+            className="bg-yellow-600 p-1 rounded-lg cursor-pointer"
           />
         </div>
       </div>
+      {togglefilter && <Filter />}
     </nav>
   );
 }
