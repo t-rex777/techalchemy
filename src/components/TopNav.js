@@ -8,15 +8,18 @@ import {
 import { FaStoreAlt } from "react-icons/fa";
 import { BsFilter } from "react-icons/bs";
 import { BiSearchAlt2 } from "react-icons/bi";
+import { useHistory } from "react-router-dom";
 
 function TopNav({ rpage }) {
+  const history = useHistory()
   return (
     <nav className="flex align-center justify-between p-4 h-16 w-full">
       <div className="flex items-center">
         <IoIosArrowBack
           color="white"
           size={30}
-          className="bg-purple-800 p-1 rounded-lg"
+          className="bg-purple-800 p-1 rounded-lg cursor-pointer"
+          onClick={()=>history.goBack()}
         />
       </div>
       <div className="flex items-center space-x-10">

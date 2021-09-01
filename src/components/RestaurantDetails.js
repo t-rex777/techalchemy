@@ -20,12 +20,7 @@ function RestaurantDetails() {
     })();
   }, [restaurantId]);
   console.log(restDetails);
-  //   restaurantDescription
-  //   restaurantImage
-  //   openingHours
-  //   contactNumber
-  //   websiteUrl
-  //   id
+
   return (
     <Base rpage={true} className="p-4">
       <div className="flex flex-col items-center space-y-3 md:flex-row">

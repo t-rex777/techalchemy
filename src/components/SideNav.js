@@ -12,7 +12,7 @@ import { IoIosArrowUp, IoIosArrowDown } from "react-icons/io";
 
 function SideNav() {
   return (
-    <nav className="p-4 w-60 flex flex-col justify-between bg-gray-100 min-h-screen">
+    <nav className="p-4 w-60 flex flex-col justify-start space-y-8 bg-gray-100 min-h-screen">
       <div className="flex px-4 items-center space-x-3 text-md self-start ">
         <img src={logo} alt="logo" />
         <p className="font-bold">Pomo & co</p>
