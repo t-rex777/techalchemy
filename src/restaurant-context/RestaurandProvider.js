@@ -29,6 +29,8 @@ export function RestaurandProvider({ children }) {
             };
       case "TOGGLE_FILTER":
         return { ...state, openFilter: !state.openFilter };
+      case "TOGGLE_NAV":
+        return { ...state, toggleNav: !state.toggleNav };
       default:
         return state;
     }
@@ -39,6 +41,7 @@ export function RestaurandProvider({ children }) {
     category: [],
     filter: [],
     openFilter: false,
+    toggleNav: true,
   });
 
   const { restaurants, category } = state;

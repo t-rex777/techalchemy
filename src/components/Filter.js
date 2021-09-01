@@ -25,9 +25,10 @@ function Filter() {
       type: "SET_RESTAURANTLIST",
       payload: filteredList,
     });
+    dispatch({ type: "TOGGLE_FILTER" });
   };
   return (
-    <div className="bg-white z-10 fixed p-4 right-0 top-0 transform  min-h-screen w-96 flex flex-col justify-between rounded-t-3xl rounded-r-none">
+    <div className="bg-white z-10 fixed p-4 right-0 top-0 transform min-h-screen w-96 flex flex-col justify-between rounded-t-3xl rounded-r-none">
       <div className="flex flex-col space-y-6">
         <span className="flex justify-between items-center">
           <h1 className="text-lg font-bold">Search filters</h1>
