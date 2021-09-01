@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   IoIosArrowBack,
   IoIosArrowUp,
@@ -9,9 +9,21 @@ import { FaStoreAlt } from "react-icons/fa";
 import { BsFilter } from "react-icons/bs";
 import { BiSearchAlt2 } from "react-icons/bi";
 import { useHistory } from "react-router-dom";
+import { useRestaurant } from "./../restaurant-context/RestaurandProvider";
 
 function TopNav({ rpage }) {
-  const history = useHistory()
+  const history = useHistory();
+  const [search, setSearch] = useState("");
+  const { state, dispatch } = useRestaurant();
+  const { restaurants } = state;
+  const searchRestaurants = (e) => {
+    const searchedValue = e.target.value;
+    setSearch(searchedValue);
+    const searchedRestaurants = restaurants.filter(({ restaurantName }) =>
+      restaurantName.toLowerCase().includes(searchedValue.toLowerCase())
+    );
+    dispatch({ type: "SET_RESTAURANTLIST", payload: searchedRestaurants });
+  };
   return (
     <nav className="flex align-center justify-between p-4 h-16 w-full">
       <div className="flex items-center">
@@ -19,7 +31,7 @@ function TopNav({ rpage }) {
           color="white"
           size={30}
           className="bg-purple-800 p-1 rounded-lg cursor-pointer"
-          onClick={()=>history.goBack()}
+          onClick={() => history.goBack()}
         />
       </div>
       <div className="flex items-center space-x-10">
@@ -41,6 +53,8 @@ function TopNav({ rpage }) {
             <BiSearchAlt2 className="absolute left-2" />
             <input
               type="text"
+              value={search}
+              onChange={searchRestaurants}
               placeholder="Search for Restaurants (Press Enter to search)"
               className="bg-gray-100 px-8 py-2 w-28 text-sm  rounded-md hidden sm:block sm:w-32 lg:w-96 "
             />
