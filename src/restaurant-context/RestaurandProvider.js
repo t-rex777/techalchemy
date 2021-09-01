@@ -17,6 +17,18 @@ export function RestaurandProvider({ children }) {
             ? state.category.filter((cate) => cate !== selectedCategory)
             : [...state.category, selectedCategory],
         };
+      case "SET_FILTER":
+        const selectedFilter = action.payload;
+        return selectedFilter === "All"
+          ? { ...state, filter: ["All"] }
+          : {
+              ...state,
+              filter: state.filter.includes(selectedFilter)
+                ? state.filter.filter((fil) => fil !== selectedFilter)
+                : [...state.filter, selectedFilter],
+            };
+      case "TOGGLE_FILTER":
+        return { ...state, openFilter: !state.openFilter };
       default:
         return state;
     }
@@ -25,6 +37,8 @@ export function RestaurandProvider({ children }) {
     restaurants: [],
     restaurantList: [],
     category: [],
+    filter: [],
+    openFilter: false,
   });
 
   const { restaurants, category } = state;

@@ -6,7 +6,9 @@ function Restaurant() {
   const { state } = useRestaurant();
   const { restaurantList } = state;
   return (
-    <div className="flex justify-center lg:justify-start flex-wrap">
+    <div
+      className={`space-x-3  grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3`}
+    >
       {restaurantList?.map(
         ({
           restaurantName,
@@ -15,12 +17,12 @@ function Restaurant() {
           isOpen,
           id,
         }) => (
-          <div key={id} className="w-80 space-y-3 mx-5 my-3">
+          <div key={id} className="my-3 space-y-3">
             <Link to={`/restaurant/${id}`}>
               <img
                 src={restaurantImage}
                 alt="restaurant"
-                className="w-80 h-48 rounded-md"
+                className="max-w-full w-full h-52 rounded-md"
               />
             </Link>
             <span className="flex justify-between">

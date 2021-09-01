@@ -7,8 +7,8 @@ import Restaurant from "./Restaurant";
 function Home() {
 
   return (
-    <Base className="p-4" rpage={false}>
-      <Category />
+    <Base className="p-4 max-w-full" rpage={false}>
+      <Category  />
       <Restaurant />
     </Base>
   );

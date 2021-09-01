@@ -43,3 +43,14 @@ export const menu = [
     price: "29.80",
   },
 ];
+
+export const cuisine = [
+  "All",
+  "Fast food",
+  "American food",
+  "Pizza",
+  "Asian",
+  "Dessert",
+  "Mexican",
+  "Breakfast",
+];

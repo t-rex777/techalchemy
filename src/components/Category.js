@@ -16,7 +16,7 @@ function Category() {
       <div className="my-6 flex  overflow-x-auto" onClick={handleCategory}>
         <span
           className={`flex items-center w-max space-x-3 mr-6 ${
-            category.includes("Baked") ? "bg-purple-300" : "bg-gray-100"
+            category.includes("Baked") ? "bg-red-200" : "bg-gray-100"
           }  px-2 py-1 rounded-md cursor-pointer`}
           id="Baked"
         >
@@ -27,7 +27,7 @@ function Category() {
         </span>
         <span
           className={`flex items-center w-max space-x-3 mr-6 ${
-            category.includes("Sweet") ? "bg-purple-300" : "bg-gray-100"
+            category.includes("Sweet") ? "bg-red-200" : "bg-gray-100"
           }  px-2 py-1 rounded-md cursor-pointer`}
           id="Sweet"
         >
@@ -38,7 +38,7 @@ function Category() {
         </span>
         <span
           className={`flex items-center w-max space-x-3 mr-6 ${
-            category.includes("Hot Dish") ? "bg-purple-300" : "bg-gray-100"
+            category.includes("Hot Dish") ? "bg-red-200" : "bg-gray-100"
           }  px-2 py-1 rounded-md cursor-pointer`}
           id="Hot Dish"
         >
@@ -49,7 +49,7 @@ function Category() {
         </span>
         <span
           className={`flex items-center w-max space-x-3 mr-6 ${
-            category.includes("Fast Food") ? "bg-purple-300" : "bg-gray-100"
+            category.includes("Fast Food") ? "bg-red-200" : "bg-gray-100"
           }  px-2 py-1 rounded-md cursor-pointer`}
           id="Fast Food"
         >
@@ -60,7 +60,7 @@ function Category() {
         </span>
         <span
           className={`flex items-center w-max space-x-3 mr-6 ${
-            category.includes("Salads") ? "bg-purple-300" : "bg-gray-100"
+            category.includes("Salads") ? "bg-red-200" : "bg-gray-100"
           }  px-2 py-1 rounded-md cursor-pointer`}
           id="Salads"
         >
