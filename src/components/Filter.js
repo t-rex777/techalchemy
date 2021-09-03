@@ -18,8 +18,18 @@ function Filter() {
         payload: restaurants,
       });
     }
-    const filteredList = restaurants.filter(({ restaurantCuisine }) => {
-      return filter.some((fil) => restaurantCuisine.includes(fil));
+    const filteredList = restaurants.filter(({ restaurantCuisine, isOpen }) => {
+      if (filter.includes("open")) {
+        if (filter[0] === "open" && filter.length === 1) {
+          return isOpen;
+        }
+        return filter.some((fil) => {
+          return restaurantCuisine.includes(fil) && isOpen;
+        });
+      }
+      return filter.some((fil) => {
+        return restaurantCuisine.includes(fil);
+      });
     });
     dispatch({
       type: "SET_RESTAURANTLIST",
@@ -44,7 +54,14 @@ function Filter() {
           <h1 className="text-lg font-bold">Sort by</h1>
           <span className="flex items-center space-y-3 space-x-3">
             <HiFire color={"red"} className="relative top-2" />
-            <p className="text-red-400 font-bold">open</p>
+            <button
+              className={`${
+                filter.includes("open") ? "text-red-400" : "text-gray-500"
+              } font-semibold`}
+              onClick={handleFilter}
+            >
+              open
+            </button>
           </span>
         </span>
         <span>
