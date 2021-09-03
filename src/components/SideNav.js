@@ -10,28 +10,13 @@ import { IoIosArrowUp, IoIosArrowDown } from "react-icons/io";
 import { useRestaurant } from "./../restaurant-context/RestaurandProvider";
 
 function SideNav() {
-  const { state, dispatch } = useRestaurant();
+  const { state } = useRestaurant();
   const { toggleNav } = state;
   return (
     <nav
-      className={`p-4 flex-none flex flex-col justify-start  bg-gray-100 min-h-screen 
-      ${toggleNav ? "w-auto" : "w-10"}`}
+      className={`p-4 w-auto flex-none flex-col justify-start  bg-gray-100 min-h-screen 
+      ${toggleNav ? "flex" : "hidden"}`}
     >
-      <span className="block mb-4 sm:hidden">
-        {!toggleNav ? (
-          <GiHamburgerMenu
-            className="cursor-pointer mt-3"
-            onClick={() => dispatch({ type: "TOGGLE_NAV" })}
-          />
-        ) : (
-          <div className="flex justify-center mt-3">
-            <ImCross
-              className="cursor-pointer"
-              onClick={() => dispatch({ type: "TOGGLE_NAV" })}
-            />
-          </div>
-        )}
-      </span>
 
       <div className={`transform ${toggleNav ? "block" : "hidden"}`}>
         <div className="flex px-4 items-center space-x-3 text-md self-start mb-4">

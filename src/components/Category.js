@@ -8,10 +8,10 @@ function Category() {
   const handleCategory = (e) =>
     dispatch({ type: "SET_CATEGORY", payload: e.target.id });
   return (
-    <div>
+    <div className="flex flex-col items-center sm:items-start">
       <h1 className="font-bold text-xl">Category</h1>
       <div
-        className="my-6 flex justify-start flex-wrap "
+        className="my-6 flex justify-center sm:items:start flex-wrap "
         onClick={handleCategory}
       >
         {categories.map(({ id, img }) => (

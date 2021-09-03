@@ -11,6 +11,8 @@ import { BsFilter } from "react-icons/bs";
 import { BiSearchAlt2 } from "react-icons/bi";
 import { useHistory } from "react-router-dom";
 import { useRestaurant } from "./../restaurant-context/RestaurandProvider";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { ImCross } from "react-icons/im";
 
 function TopNav({ rpage }) {
   const history = useHistory();
@@ -29,6 +31,23 @@ function TopNav({ rpage }) {
   return (
     <>
       <nav className={`flex align-center justify-between p-4 h-16`}>
+        <span className="block mb-4 sm:hidden">
+          {!toggleNav ? (
+            <GiHamburgerMenu
+              className="cursor-pointer mt-2"
+              size={20}
+              color={"#5B21B6"}
+              onClick={() => dispatch({ type: "TOGGLE_NAV" })}
+            />
+          ) : (
+            <ImCross
+              color={"#5B21B6"}
+              size={15}
+              className="cursor-pointer mt-2"
+              onClick={() => dispatch({ type: "TOGGLE_NAV" })}
+            />
+          )}
+        </span>
         <div className="flex items-center">
           <IoIosArrowBack
             color="white"
