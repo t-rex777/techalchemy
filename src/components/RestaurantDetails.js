@@ -44,7 +44,7 @@ function RestaurantDetails() {
             </span>
           </div>
         </div>
-        <div className="w-full md:w-1/3">
+        <div className="w-full md:w-1/3 flex justify-center">
           <img
             src={restDetails?.restaurantImage}
             alt="restaurant"

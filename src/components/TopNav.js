@@ -58,14 +58,14 @@ function TopNav({ rpage }) {
           )}
 
           {!rpage && (
-            <div className="flex items-center flex-grow relative mx-4">
+            <div className="hidden sm:flex items-center flex-grow relative mx-4">
               <BiSearchAlt2 className="absolute left-2" />
               <input
                 type="text"
                 value={search}
                 onChange={searchRestaurants}
                 placeholder="Search for Restaurants (Press Enter to search)"
-                className="bg-gray-100 px-8 py-2 text-sm  rounded-md w-80 lg:w-96 "
+                className="bg-gray-100 px-8 py-2 text-sm  rounded-md sm:w-80 lg:w-96 "
               />
             </div>
           )}

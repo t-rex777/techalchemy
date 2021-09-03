@@ -43,6 +43,7 @@ function Restaurant() {
           </div>
         )
       )}
+      {restaurantList.length === 0 && <p>No restaurant found!</p>}
     </div>
   );
 }

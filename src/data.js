@@ -5,6 +5,11 @@ import menu4 from "./images/menu4.webp";
 import menu5 from "./images/menu5.webp";
 import menu6 from "./images/menu6.webp";
 
+import carrows from "./images/icons/carrows.svg"
+import mcd from "./images/icons/mcd.svg";
+import pizzahut from "./images/icons/pizzahut.svg";
+import burgerking from "./images/icons/burgerking.svg";
+
 export const menu = [
   {
     id: 1,
@@ -53,4 +58,28 @@ export const cuisine = [
   "Dessert",
   "Mexican",
   "Breakfast",
+];
+
+
+export const categories = [
+  {
+    id: "Baked",
+    img: carrows,
+  },
+  {
+    id: "Sweet",
+    img: burgerking,
+  },
+  {
+    id: "Hot Dish",
+    img: pizzahut,
+  },
+  {
+    id: "Fast Food",
+    img: mcd,
+  },
+  {
+    id: "Salads",
+    img: mcd,
+  },
 ];
