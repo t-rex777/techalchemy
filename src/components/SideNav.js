@@ -1,7 +1,6 @@
 import React from "react";
 import logo from "../images/icons/logo.svg";
 import { AiOutlineHome, AiOutlineMail } from "react-icons/ai";
-import { GiHamburgerMenu } from "react-icons/gi";
 import { BiHelpCircle } from "react-icons/bi";
 import { FiSettings, FiClock } from "react-icons/fi";
 import { VscNote } from "react-icons/vsc";
