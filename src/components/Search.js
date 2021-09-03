@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { BiSearchAlt2 } from 'react-icons/bi'
 import { useRestaurant } from '../restaurant-context/RestaurandProvider';
 
-function Search() {
+function Search({rpage}) {
   const [search, setSearch] = useState("");
   const { state, dispatch } = useRestaurant();
   const { restaurants} = state;
@@ -16,7 +16,7 @@ function Search() {
     dispatch({ type: "SET_RESTAURANTLIST", payload: searchedRestaurants });
   };
     return (
-        <div className="flex items-center flex-grow relative mx-4 sm:hidden ">
+        <div className={`flex items-center flex-grow relative mx-4 sm:hidden ${rpage && "hidden"}`}>
         <BiSearchAlt2 className="absolute left-2" />
         <input
           type="text"

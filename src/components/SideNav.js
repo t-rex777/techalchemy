@@ -7,6 +7,7 @@ import { VscNote } from "react-icons/vsc";
 import { ImCross, ImArrowRight2 } from "react-icons/im";
 import { IoIosArrowUp, IoIosArrowDown } from "react-icons/io";
 import { useRestaurant } from "./../restaurant-context/RestaurandProvider";
+import { Link } from "react-router-dom";
 
 function SideNav() {
   const { state } = useRestaurant();
@@ -16,11 +17,12 @@ function SideNav() {
       className={`p-4 w-auto flex-none flex-col justify-start  bg-gray-100 min-h-screen 
       ${toggleNav ? "flex" : "hidden"}`}
     >
-
       <div className={`transform ${toggleNav ? "block" : "hidden"}`}>
         <div className="flex px-4 items-center space-x-3 text-md self-start mb-4">
-          <img src={logo} alt="logo" />
-          <p className="font-bold">Pomo & co</p>
+          <Link to="/">
+            <img src={logo} alt="logo" />
+            <p className="font-bold">Pomo & co</p>
+          </Link>
         </div>
 
         <div className="my-10">

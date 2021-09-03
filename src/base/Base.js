@@ -17,7 +17,7 @@ function Base({ children, className, rpage }) {
         <SideNav />
         <div className="flex-grow">
           <TopNav rpage={rpage} />
-          <Search />
+          <Search rpage={rpage} />
           <div className={className}>{children}</div>
         </div>
       </div>

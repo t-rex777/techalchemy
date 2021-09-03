@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import logo from "../images/icons/logo.svg";
 import {
   IoIosArrowBack,
@@ -31,7 +32,7 @@ function TopNav({ rpage }) {
   return (
     <>
       <nav className={`flex align-center justify-between p-4 h-16`}>
-        <span className="block mb-4 sm:hidden">
+        <span className="block mb-4 sm:hidden mr-1">
           {!toggleNav ? (
             <GiHamburgerMenu
               className="cursor-pointer mt-2"
@@ -48,16 +49,18 @@ function TopNav({ rpage }) {
             />
           )}
         </span>
-        <div className="flex items-center">
+        <div className="flex  items-center">
           <IoIosArrowBack
             color="white"
             size={30}
-            className="bg-purple-800 p-1 rounded-lg cursor-pointer"
+            className="bg-purple-800 p-1 rounded-lg cursor-pointer hidden sm:block"
             onClick={() => history.goBack()}
           />
           {!toggleNav && (
             <div className="m-2">
-              <img src={logo} alt="logo" className="w-10" />
+              <Link to="/">
+                <img src={logo} alt="logo" className="w-10" />
+              </Link>
             </div>
           )}
         </div>
